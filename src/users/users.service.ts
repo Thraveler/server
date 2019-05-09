@@ -12,10 +12,10 @@ export class UsersService {
   async createUser(userDto: UserDto): Promise<Users> {
     console.log(userDto);
     const user = new this.userModel(userDto);
-    return await user.save;
+    return await user.save();
   }
 
-  async getUsers(): Promise<Users> {
+  async getUsers(): Promise<Users[]> {
     return await this.userModel.find().exec();
   }
 

@@ -15,13 +15,12 @@ export class UsersController {
   
   @Post()
   async createUSer(@Body() user: UserDto) {
-    console.log(user);
     return await this.usersService.createUser(user);
   }
   
-  @Get('id')
+  @Get(':id')
   async getUser(@Param('id') id: String) {
-    return await this.usersService.getUsers();
+    return await this.usersService.getUser(id);
   }
-
+  
 }
